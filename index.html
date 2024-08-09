@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Astronaut form</title>
+    <style>
+        
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://kq-storage.s3.ap-south-1.amazonaws.com/Github/astronaut/sky-moon-bg%5B1%5D.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding-right: 100px;
+}
+.astronaut {
+    position: absolute;
+    width: 30%; 
+    animation: float 6s ease-in-out infinite;
+}
+
+.astronaut1 {
+    top: 15%;
+    left: 7%;
+    animation-delay: 0s; 
+}
+
+.astronaut2 {
+    top: 35%;
+    left: 33%;
+    animation-delay: 2s; 
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+ /* Form Part*/
+
+.form-container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    z-index: 1; 
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.radio-group input[type="radio"] {
+    margin: 0 10px 0 0;
+}
+
+.radio-group label {
+    margin-right: 20px;
+    font-weight: normal;
+    color: #555;
+}
+.space-suit-question {
+    margin-left: -62px; 
+}
+input[type="email"] {
+    color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+}
+
+
+button {
+    background-color: #ff6f47;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff764c;
+}
+    </style>
+
+
+</head>
+<body>
+   <!--Astronauts Part-->
+    <img src="https://kq-storage.s3.ap-south-1.amazonaws.com/Github/astronaut/space-man-1%5B1%5D.png" alt="Astronaut 1" class="astronaut astronaut1">
+    <img src="https://kq-storage.s3.ap-south-1.amazonaws.com/Github/astronaut/space-man-2%5B1%5D.png" alt="Astronaut 2" class="astronaut astronaut2">
+
+    <!--Form Part-->
+    <div class="form-container">
+        <h2>Rocket around the moon with your BFFs</h2>
+        <form>
+            <label for="country">Departure Country</label>
+            <select id="country" name="country">
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="india">India</option>
+                <option value="china">China</option>
+            </select>
+
+            <label for="travelers">No. of Space Travellers</label>
+            <input type="number" id="travelers" name="travelers" min="1" max="10" value="2">
+
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" value="space@gmail.com">
+
+            <p class="space-suit-question">Do you wanna rent a space suit?</p>
+            <div class="radio-group">
+                <input type="radio" id="yes" name="spacesuit" value="yes" checked>
+                <label for="yes">Yes, Please</label>
+                <input type="radio" id="no" name="spacesuit" value="no">
+                <label for="no">No, I have my own</label>
+            </div>
+
+            <button type="submit">TAKE US TO SPACE</button>
+        </form>
+    </div>
+
+
+    
+</body>
+</html>
